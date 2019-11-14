@@ -1,4 +1,3 @@
-require('dotenv').config();
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -13,6 +12,7 @@ const cors = require("cors");
 
 const user = require('./models/User');
 
+const dotenv = require('dotenv').config();
 
 // enables database connection
 require("./configs/database/db.setup");

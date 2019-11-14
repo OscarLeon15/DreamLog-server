@@ -82,7 +82,7 @@ authRoutes.get("/api/checkuser", (req, res, next) => {
   // console.log("do i have user: ", req.user);
   if (req.user) {
     req.user.encryptedPassword = undefined;
-    // res.json(req.user)
+    res.json(req.user)
     res.status(200).json({ userDoc: req.user })
   } else {
     res.status(401).json({ userDoc: null })
