@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const personalSchema = new Schema({
 
  nameUser: String,
- fileName: String,
+ numberOfFiles: Number,
 
 })
 const Personal = mongoose.model('converter', personalSchema)

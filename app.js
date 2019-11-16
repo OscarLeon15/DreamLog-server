@@ -1,4 +1,3 @@
-require('dotenv').config();
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -13,6 +12,7 @@ const cors = require("cors");
 
 const user = require('./models/User');
 
+const dotenv = require('dotenv').config();
 
 // enables database connection
 require("./configs/database/db.setup");
@@ -76,8 +76,8 @@ app.use("/", authRoutes);
 const testing = require('./routes/testing');
 app.use('/', testing);
 
-// const users = require('./routes/users');
-// app.use('/', users);
+// const personal = require('./routes/personal');
+// app.use('/personal', users);
 
 
 
