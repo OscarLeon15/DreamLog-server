@@ -6,7 +6,7 @@ const User = require('../models/User');
 router.post('/personal', (req, res, next) => {
   res.json('component/personal')
   console.log(req.user)
-  console.log('hello')
+  console.log('post request ')
   User.find()
     .then(events => {
       res.json(events)

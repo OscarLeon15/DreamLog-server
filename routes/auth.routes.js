@@ -79,7 +79,7 @@ authRoutes.delete("/api/logout", (req, res, next) => {
 // check if user is logged in and if we are logged in what are user's details
 // this is the information that is useful for the frontend application
 authRoutes.get("/api/checkuser", (req, res, next) => {
-  // console.log("do i have user: ", req.user);
+  console.log("do i have user: ", req.user);
   if (req.user) {
     req.user.encryptedPassword = undefined;
     // res.json(req.user)
