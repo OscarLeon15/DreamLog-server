@@ -3,9 +3,11 @@ const Schema = mongoose.Schema;
 
 const personalSchema = new Schema({
 
- nameUser: String,
- numberOfFiles: Number,
+nameUser: String,
+numberOfFiles: Number,
 
+},{
+    timestamps: true
 })
-const Personal = mongoose.model('converter', personalSchema)
+const Personal = mongoose.model('personal', personalSchema)
 module.exports = Personal;
