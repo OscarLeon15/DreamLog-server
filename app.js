@@ -77,7 +77,7 @@ const testing = require('./routes/testing');
 app.use('/', testing);
 
 // const personal = require('./routes/personal');
-// app.use('/personal', users);
+// app.use('/personal', personal);
 
 
 
