@@ -76,8 +76,8 @@ app.use("/", authRoutes);
 const testing = require('./routes/testing');
 app.use('/', testing);
 
-// const personal = require('./routes/personal');
-// app.use('/personal', personal);
+const dashboard = require('./routes/dashboard');
+app.use('/', dashboard);
 
 
 
