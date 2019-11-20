@@ -73,13 +73,14 @@ app.use('/', index);
 const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
 
-const testing = require('./routes/testing');
-app.use('/', testing);
+// const testing = require('./routes/testing');
+// app.use('/', testing);
 
-const dashboard = require('./routes/dashboard');
-app.use('/', dashboard);
+// const dashboard = require('./routes/dashboard');
+// app.use('/', dashboard);
 
-
+const dreamRoute = require('./routes/dreamRoute');
+app.use('/', dreamRoute);
 
 
 app.use((req, res, next) => {
