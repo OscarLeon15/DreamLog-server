@@ -4,16 +4,24 @@ const dreamEntry = require('../models/dreamEntry');
 
 // --- Post dream to DB ------------------------
 router.post('/dreamRoute', (req, res, next) => {
-  const dreamEnteredInDb = req.body.dreamEntry
-  // console.log("req.body ~~~~>", req.body)
-  // console.log("req.body.dreamEntry ~~~~>", req.body.dreamEntry)
+
+  const dreamText = req.body.dreamText
+  const dreamName = req.body.dreamName
+
+  console.log("req.body ~~~~>", req.body)
+  console.log("req.body.dreamText ~~~~>", req.body.dreamText)
+  console.log("req.body.dreamName ~~~~>", req.body.dreamName)
+
   dreamEntry.create({
-    dreamText: dreamEnteredInDb
+    dreamText: dreamText,
+    dreamName: dreamName,
   })
+
     .then(thisDreamText => {
       console.log("Success! This is dream text in POST route ===>>>", thisDreamText);
     })
     .catch(err => console.log("Error posting dream to DB:====>>>", err))
+
   console.log('hello from the dream entry route!!!')
 });
 

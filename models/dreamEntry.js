@@ -5,8 +5,12 @@ const dreamEntrySchema = new Schema({
   dreamText: {
     type: String,
     // required: false
+  },
+  dreamName: {
+    type: String
   }
 },
+
   {
     timestamps: true
   });
