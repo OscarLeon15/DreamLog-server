@@ -30,6 +30,15 @@ router.get("/returnDream", (req, res, next) => {
 })
 
 
+// --- Delete dream from db -----------------------
+router.get("/delete/:id", (req, res, next) => {
+  dreamEntry.findByIdAndRemove({ _id: req.params.id }, function (err, business) {
+    if (err) res.json(err);
+    else res.json('Successfully removed');
+  });
+})
+
+
 
 
 
