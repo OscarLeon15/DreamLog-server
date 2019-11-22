@@ -47,6 +47,35 @@ router.get("/delete/:id", (req, res, next) => {
 })
 
 
+// --- Edit dream from db -----------------------
+
+// Grab one dream to edit
+router.get("/edit/:id", (req, res, next) => {
+  dreamEntry.findOne({ _id: req.params.id })
+    .then(stuff => { res.json(stuff) })
+    .catch(err => { console.log(err) })
+
+})
+
+// Submit the edit
+// router.post("/edit/:id", (req, res, next) => {
+//   dreamEntry.findByIdAndUpdate({ _id: req.params.id }, function (err, business) {
+//     if (err) res.json(err);
+//     else res.json('Successfully updated');
+//   });
+// })
+
+// this method overwrites existing data in our database
+// router.post('/updateData', (req, res) => {
+//   const { id, update } = req.body;
+//   dreamEntry.findByIdAndUpdate(id, update, (err) => {
+//     if (err) return res.json({ success: false, error: err });
+//     return res.json({ success: true });
+//   });
+// });
+
+
+
 
 
 
