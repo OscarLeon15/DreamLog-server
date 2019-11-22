@@ -58,21 +58,25 @@ router.get("/edit/:id", (req, res, next) => {
 })
 
 // Submit the edit
-// router.post("/edit/:id", (req, res, next) => {
-//   dreamEntry.findByIdAndUpdate({ _id: req.params.id }, function (err, business) {
-//     if (err) res.json(err);
-//     else res.json('Successfully updated');
-//   });
-// })
+router.post('/update/:id', (req, res) => {
 
-// this method overwrites existing data in our database
-// router.post('/updateData', (req, res) => {
-//   const { id, update } = req.body;
-//   dreamEntry.findByIdAndUpdate(id, update, (err) => {
-//     if (err) return res.json({ success: false, error: err });
-//     return res.json({ success: true });
-//   });
-// });
+  const dreamText = req.body.dreamText
+  const dreamName = req.body.dreamName
+
+  console.log("req.body ~~~~>", req.body)
+  console.log("req.body.dreamText ~~~~>", req.body.dreamText)
+  console.log("req.body.dreamName ~~~~>", req.body.dreamName)
+
+  dreamEntry.update({
+    dreamText: dreamText,
+    dreamName: dreamName,
+  })
+
+    .then(dream => { console.log("Success! This is dream text in EDIT route ===>>>", dream) })
+    .catch(err => console.log("Error editing dream:====>>>", err))
+
+  console.log('hello from the edit route!!!')
+});
 
 
 
