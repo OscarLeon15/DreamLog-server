@@ -21,6 +21,17 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+//DB Heroku
+mongoose
+
+ .connect(process.env.MONGODB_URI, {useMongoClients: true})
+//  .connect('mongodb://localhost/project-2', {useNewUrlParser: true})
+ .then(x => {
+   console.log(`Connected to Mongo! Database name:  ${x.connections[0].name}`)
+ })
+ .catch(err => {
+   console.error('Error connecting to mongo', err)
+ });
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
